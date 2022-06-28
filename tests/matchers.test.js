@@ -27,3 +27,30 @@ test("verificando de o vetor de usuarios é igual a:", () => {
     { name: "John", age: "28" },
   ]);
 });
+
+test("nulo", () => {
+  const n = null;
+  expect(n).toBeNull();
+});
+
+test("verificando se o vetor de usuário não está nulo", () => {
+  expect(users).not.toBeNull();
+});
+
+test("verificando se o vetor de usuarios está definido", () => {
+  expect(users).toBeDefined();
+});
+
+test("verificando se o vetor de usuarios não está indefinido", () => {
+  expect(users).not.toBeUndefined();
+});
+
+test("verificando se o usuario está logado", () => {
+  const logged = true;
+  expect(logged).toBeTruthy();
+});
+
+test("verificando se o usuário não está logado", () => {
+  const logged = false;
+  expect(logged).toBeFalsy();
+});
