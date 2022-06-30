@@ -1,6 +1,8 @@
-var { sum, sub, multiply, divide } = require("../functions/calculator.js");
-var { numbers } = require("../data/numbers.js");
+var { ages } = require("../data/ages.js");
 var { users } = require("../data/users.js");
+var { numbers } = require("../data/numbers.js");
+
+// Common Matchers
 
 test("atribuição de objeto", () => {
   const data = { one: 1 };
@@ -28,6 +30,8 @@ test("verificando de o vetor de usuarios é igual a:", () => {
   ]);
 });
 
+// True
+
 test("nulo", () => {
   const n = null;
   expect(n).toBeNull();
@@ -53,4 +57,31 @@ test("verificando se o usuario está logado", () => {
 test("verificando se o usuário não está logado", () => {
   const logged = false;
   expect(logged).toBeFalsy();
+});
+
+//Numbers matchers
+
+test("verificando se a idade 10 + 90 dá 100", () => {
+  const sum = 10 + 90;
+  expect(sum).toBe(100);
+});
+
+test("verificando se o resultado de 100 + 50 é maior que 130", () => {
+  const sum = 100 + 50;
+  expect(sum).toBeGreaterThan(130);
+});
+
+test("verificando se o resultado de 90 + 80 é maior ou igual à 170", () => {
+  const sum = 90 + 80;
+  expect(sum).toBeGreaterThanOrEqual(170);
+});
+
+test("verificando se 10 - 5 é menor que 6", () => {
+  const sub = 10 - 5;
+  expect(sub).toBeLessThan(6);
+});
+
+test("verificando se 10 - 2 é menor ou igual à 8", () => {
+  const sub = 10 - 2;
+  expect(sub).toBeLessThanOrEqual(8);
 });
