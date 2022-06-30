@@ -1,5 +1,6 @@
 var { users } = require("../data/users.js");
 var { numbers } = require("../data/numbers.js");
+var { compileAndroidCode } = require("../functions/errorFunctions.js");
 
 // Common Matchers
 
@@ -113,4 +114,11 @@ test("verificando se existe a ativadade 'Lavar a louça'", () => {
   ];
   expect(tasks).toContain("Lavar a louça");
   expect(new Set(tasks)).toContain("Lavar a louça");
+});
+
+// Exceptions
+
+test("verificando se a compilação do android está retornando um erro", () => {
+  expect(() => compileAndroidCode()).toThrow("você está usando o JDK errado");
+  expect(() => compileAndroidCode()).toThrow(/JDK/);
 });
