@@ -1,4 +1,3 @@
-var { ages } = require("../data/ages.js");
 var { users } = require("../data/users.js");
 var { numbers } = require("../data/numbers.js");
 
@@ -96,4 +95,22 @@ test("verificando se existe 'aiz' dentro de 'Taiza'", () => {
 test("verificando se não existe 'aiz' dentro de 'João'", () => {
   const name = "João";
   expect(name).not.toMatch(/aiz/);
+});
+
+// Arrays and iterable
+
+test("verificando se existe a idade 90 no vetor", () => {
+  const ages = [10, 90];
+  expect(ages).toContain(90);
+  expect(new Set(ages)).toContain(90);
+});
+
+test("verificando se existe a ativadade 'Lavar a louça'", () => {
+  const tasks = [
+    "Levar o cachorro para passear",
+    "Lavar a louça",
+    "Arrumar a cama",
+  ];
+  expect(tasks).toContain("Lavar a louça");
+  expect(new Set(tasks)).toContain("Lavar a louça");
 });
