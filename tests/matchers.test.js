@@ -85,3 +85,15 @@ test("verificando se 10 - 2 é menor ou igual à 8", () => {
   const sub = 10 - 2;
   expect(sub).toBeLessThanOrEqual(8);
 });
+
+// Strings
+
+test("verificando se existe 'aiz' dentro de 'Taiza'", () => {
+  const name = "Taiza";
+  expect(name).toMatch(/aiz/);
+});
+
+test("verificando se não existe 'aiz' dentro de 'João'", () => {
+  const name = "João";
+  expect(name).not.toMatch(/aiz/);
+});
